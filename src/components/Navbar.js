@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Container = styled.div`
   height: 60px;
@@ -33,16 +34,20 @@ const Language = styled.span`
 `;
 const Center = styled.div`
   flex: 1;
+  text-align: center;
 `;
 const Logo = styled.h1`
   font-weight: 900;
 `;
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
 `;
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
+  margin-right: 25px;
 `;
 
 const Navbar = () => {
@@ -53,13 +58,21 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <SearchIcon />
+            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
           <Logo>Fast.Shop</Logo>
         </Center>
-        <Right>Right</Right>
+        <Right>
+          <MenuItem>Register</MenuItem>
+          <MenuItem>Login</MenuItem>
+          <MenuItem>
+            <Badge badgeContent={4} color="primary">
+              <ShoppingCartOutlinedIcon />
+            </Badge>
+          </MenuItem>
+        </Right>
       </Wrapper>
     </Container>
   );
